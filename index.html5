@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Make sure your title is relevant to you -->
+    <title>Arnav Yadavilli - Student, Engineer</title>
+    <!-- Ensure 'style.css' is the correct path and contains the CSS I provided -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="portfolio-container">
+
+    <header class="site-header full-bleed">
+        <h1>Arnav Yadavilli</h1>
+        <p>Product Designer based in Brooklyn, New York</p>
+        <nav class="navbar">
+            <ul>
+                <li><a href="mailto:your-email@example.com" class="nav-link">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/your-linkedin" class="nav-link">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content-area">
+        <section id="projects" class="projects-section">
+            <h2>My Work</h2>
+            <div class="project-grid">
+
+                <!-- Project 1 -->
+                <article class="card">
+                    <div class="card__image-container">
+                        <!-- Add .lazy if using lazy loading JS, otherwise remove it or ensure your JS handles it -->
+                        <img src="project1.jpg" alt="Project 1" class="card__image lazy">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Project Title 1</h3>
+                        <p class="card__description">Brief description of Project 1.</p>
+                    </div>
+                    <div class="card__actions">
+                        <a href="#" class="button">View Project</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="card">
+                    <div class="card__image-container">
+                        <img src="project2.jpg" alt="Project 2" class="card__image lazy">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Project Title 2</h3>
+                        <p class="card__description">Brief description of Project 2.</p>
+                    </div>
+                    <div class="card__actions">
+                        <a href="#" class="button">View Project</a>
+                    </div>
+                </article>
+
+                <!-- Add more projects here following the .card structure -->
+
+            </div>
+        </section>
+        <!-- You can add other sections like "About Me", "Contact" here, also wrapped in <section> tags -->
+    </main>
+
+    <footer class="site-footer full-bleed">
+        <p>&copy; Arnav Yadavilli</p>
+    </footer>
+
+    <!-- If you implement lazy loading for images, you'd include your JavaScript here. Example: -->
+    <!-- <script src="lazy-load.js"></script> -->
+</body>
+</html>
