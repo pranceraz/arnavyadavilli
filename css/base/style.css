@@ -1,7 +1,8 @@
 /* styles.css */
 
 /* 1. FONT IMPORTS ---------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 
 /* 2. CSS RESET (Josh Comeau's Custom CSS Reset) ---------- */
 *, *::before, *::after {
@@ -40,7 +41,7 @@ p, h1, h2, h3, h4, h5, h6 {
 /* 3. CUSTOM PROPERTIES (VARIABLES) ----------------------- */
 :root {
   /* Typography */
-  --font-primary: 'Inter', system-ui, sans-serif;
+  --font-primary: 'Lora', serif;
   --text-base: clamp(1rem, 0.92rem + 0.4vw, 1.25rem); /* Approx 16px to 20px */
   --text-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem); /* Approx 20px to 28px */
   --text-xl: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);   /* Approx 24px to 40px */
@@ -48,22 +49,22 @@ p, h1, h2, h3, h4, h5, h6 {
 
   /* Colors */
  /* --- NEW COLOR PALETTE 1: Soft Peach & Rose Garden --- */
-  --color-bg: #F8F0E3;          /* Main page background (Eggshell White) */
+  --color-bg: #FDFAF6;          /* Main page background (Eggshell White) */
   --color-primary: #FFE5CC;    /* Larger sections, card backgrounds (Pale Peach) */
-  --color-secondary: #E6C7C7;  /* Secondary buttons, borders, hover states (Dusty Rose Pink) */
-  --color-accent: #C88A78;     /* Call-to-action buttons, important links (Muted Terracotta Red) */
-  --color-text: #4A4A4A;       /* Main body text, headings (Soft Charcoal) */
+  --color-secondary: #e6c7c7e7;  /* Secondary buttons, borders, hover states (Dusty Rose Pink) */
+  --color-accent: #363636;     /* Call-to-action buttons, important links (Muted Terracotta Red) */
+  --color-text: #363636;       /* Main body text, headings (Soft Charcoal) */
 
   /* Utility Colors (from new palette or generally useful) */
   --color-white: #FFFFFF;      /* Pure white for contrast if needed */
   --color-black: #000000;      /* Pure black if needed (kept from old set, still useful) */
 
   /* Optional: Define hover/active states for your accent color */
-  --color-accent-hover: #b97c6d; /* A slightly darker version of terracotta for hover */
-  --color-accent-active: #a96f60; /* An even darker version for active state */
+  --color-accent-hover: #646464; /* A slightly darker version of terracotta for hover */
+  --color-accent-active: #a35c4a5a; /* An even darker version for active state */
 
   /* Optional: A lighter text color for less important text or on darker backgrounds */
-  --color-text-light: #757575;
+  --color-text-light: #757575; 
 
   /* Spacing (example) */
   --space-xs: 0.5rem;  /* 8px */
@@ -266,7 +267,7 @@ a:hover, a:focus {
 /* Button Component */
 .button {
   display: inline-block;
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: var(--white);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--border-radius-sm);
