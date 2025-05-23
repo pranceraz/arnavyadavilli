@@ -12,9 +12,11 @@
 
     <header class="site-header full-bleed">
         <h1>Arnav Yadavilli</h1>
-        <p>Product Designer based in Brooklyn, New York</p>
-        <nav class="navbar">
+        <p>Engineer, making amazing things</p>
+         <nav class="navbar">
             <ul>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li> <!-- Added link to projects section -->
+                <li><a href="index.html#blog" class="nav-link">Blog</a></li> <!-- Link to new blog section -->
                 <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
                 <li><a href="https://www.linkedin.com/in/your-linkedin" class="nav-link">LinkedIn</a></li>
             </ul>
@@ -37,7 +39,7 @@
                         <p class="card__description">Brief description of Project 1.</p>
                     </div>
                     <div class="card__actions">
-                        <a href="#" class="button">View Project</a>
+                        <a href="src/pages/project1-detatil.html" class="button">View Project</a>
                     </div>
                 </article>
 
@@ -86,6 +88,48 @@
             </div>
         </section>
         <!-- You can add other sections like "About Me", "Contact" here, also wrapped in <section> tags -->
+            <!-- (Inside main.main-content-area, after the <section id="projects"> ... </section>) -->
+
+    <section id="blog" class="blog-section">
+        <h2>My Blog</h2>
+        <div class="blog-grid"> <!-- Similar to project-grid for layout -->
+
+            <!-- Blog Post Preview 1 -->
+            <article class="card blog-post-preview"> <!-- You can reuse 'card' or create 'blog-card' -->
+                <div class="card__image-container">
+                    <!-- Optional: Image for the blog post -->
+                    <img src="src/img/blog-post1-thumb.jpg" alt="Blog Post 1 Thumbnail" class="card__image lazy">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Title of My First Blog Post</h3>
+                    <p class="blog-post-meta"><time datetime="2024-05-21">May 21, 2024</time> - 5 min read</p>
+                    <p class="card__description">A short summary or excerpt of the blog post content to entice readers...</p>
+                </div>
+                <div class="card__actions">
+                    <a href="blog-post1.html" class="button">Read More</a>
+                </div>
+            </article>
+
+            <!-- Blog Post Preview 2 -->
+            <article class="card blog-post-preview">
+                <div class="card__image-container">
+                    <img src="src/img/blog-post2-thumb.jpg" alt="Blog Post 2 Thumbnail" class="card__image lazy">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Another Interesting Topic I Wrote About</h3>
+                    <p class="blog-post-meta"><time datetime="2024-05-15">May 15, 2024</time> - 7 min read</p>
+                    <p class="card__description">This post explores XYZ and offers insights into ABC. Click to learn more...</p>
+                </div>
+                <div class="card__actions">
+                    <a href="blog-post2.html" class="button">Read More</a>
+                </div>
+            </article>
+
+            <!-- Add more blog post previews here -->
+
+        </div>
+    </section>
+
     </main>
 
     <footer class="site-footer full-bleed">
