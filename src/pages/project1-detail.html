@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title 1 - Arnav Yadavilli</title>
+    <link rel="stylesheet" href="../../css/base/style.css"> <!-- Link to your main stylesheet -->
+    <!-- You might want a specific stylesheet for project pages if needed -->
+    <!-- <link rel="stylesheet" href="css/project-detail.css"> -->
+</head>
+<body class="project-detail-page"> <!-- Consider a different class for project detail page styling -->
+
+    <header class="site-header full-bleed">
+        <h1>Arnav Yadavilli</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
+                 <li><a href="../../index.html" class="nav-link">&larr; Back to Portfolio</a></li> <!-- Back link -->
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content-area">
+        <article class="project-content">
+            <h2>UC Berkeley Solar Vehicle Team</h2>
+            
+            <div class="project-hero-image">
+                <img src="../../src/img/smiling_while_racing.JPG" alt="Detailed view of Project 1">
+            </div>
+
+            <h3>Overview</h3>
+            <section class="project-overview">
+                
+                <p>I helped build live dashboards that showed us exactly what our solar racecar was doing while it was on the track, so we could keep an eye on all the important stuff.
+                     My role was in architecting and programming out different sections of the system. Our team tested the system live on a racetrack and had great success with us getting a high resolution of data samples being processed,
+                    reaching close to 20 ms per datapoint at ranges of 300+ meters. I also helped build a data simulator to perform system stress tests and to do data analysis based on simulating past collected data.</p>
+            </section>
+            <h3>Key Features</h3>
+            <section class="project-features">
+                
+                <ul>
+                    <li>Real Time Data Ingestion + graphing.</li>
+                    <li>Easily extensible system with quick analysis and alerts.</li>
+                    <li>Cross Platform and Sets up in less than 3min</li>
+                </ul>
+            </section>
+            <h3>Technologies Used</h3>
+            <section class="project-technologies">
+                
+                <ul>
+                    <li>Python, Asyncio, Socat, Pandas, Matplotlib, Serial</li>
+                    <li>Grafana, InfluxDB</li>
+                    <li>XBEE, Arduino </li>
+                </ul>
+            </section>
+            
+            <h3>Gallery / Screenshots</h3>
+            <section class="project-gallery">
+                
+                <div class="image-gallery-grid">
+                    <img src="../img/doing_strat.JPG" alt="Screenshot 1 of Project 1">
+                    <img src="../img/STAR_POSE.jpg" alt="Screenshot 2 of Project 1">
+                    <!-- Add more images or videos -->
+                </div>
+            </section>
+
+            <h3>Challenges & Learnings</h3>
+            <section class="project-challenges-learnings">
+                
+                <p>Dealing with existing messy legacy uncommented (*sigh*) code written by people who are long gone was definitely a challenge. Making sure that the system is  cross platform was a requirement that i had faced for the first time and allowed me to learn a lot about how different operating systems operate. I also discovered the need for threading and asyncronous IO operations. It allowed me to think about various methods to optimize the existing systems. I also applied data visualisation on real world data sets that were created by my own team!<br><br>PS: I also beacme a licensed radio operator</p>
+            </section>
+
+           <center> <section class="project-links">
+                <h3>Live Demo / Source Code</h3>
+                <p>
+                    <a href="[link-to-live-demo]" class="button" target="_blank" rel="noopener noreferrer">View Live Demo</a>
+                    <a href="https://github.com/CalSol/new-telemetry" class="button" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </p>
+            </section></center>
+
+        </article>
+    </main>
+
+    <footer class="site-footer full-bleed">
+        <p>&copy; Arnav Yadavilli</p>
+    </footer>
+
+</body>
+</html>

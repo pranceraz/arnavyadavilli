@@ -46,11 +46,11 @@ p, h1, h2, h3, h4, h5, h6 {
   --text-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem); /* Approx 20px to 28px */
   --text-xl: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);   /* Approx 24px to 40px */
   --text-2xl: clamp(2rem, 1.6rem + 2vw, 3.5rem);  /* Approx 32px to 56px */
-
+  --text-3xl: clamp(2.5rem, 1.8rem + 3vw, 4.5rem); 
   /* Colors */
  /* --- NEW COLOR PALETTE 1: Soft Peach & Rose Garden --- */
   --color-bg: #FDFAF6;          /* Main page background (Eggshell White) */
-  --color-primary: #FFE5CC;    /* Larger sections, card backgrounds (Pale Peach) */
+  --color-primary: #fef2db;    /* Larger sections, card backgrounds (Pale Peach)   e7f1dc*/
   --color-secondary: #c7736a;  /* Secondary buttons, borders, hover states (Dusty Rose Pink) */
   --color-accent: #363636;     /* Call-to-action buttons, important links (Muted Terracotta Red) */
   --color-text: #363636;       /* Main body text, headings (Soft Charcoal) */
@@ -95,7 +95,7 @@ h1, .h1{
   font-family: 'Instrument Serif', serif; /* Apply Instrument Serif to all headings */
   letter-spacing: 2px;
 }
-h1, .h1 { font-size: var(--text-2xl); margin-bottom: var(--space-sm); }
+h1, .h1 { font-size: var(--text-3xl); margin-bottom: var(--space-sm); }
 h2, .h2 { font-size: var(--text-xl); margin-bottom: var(--space-sm); }
 h3, .h3 { font-size: var(--text-lg); margin-bottom: var(--space-xs); }
 /* Add h4, h5, h6 if needed */
@@ -388,4 +388,135 @@ a:hover, a:focus {
 
 .lazy-loaded {
   opacity: 1;
+}
+
+/* CSS for Project Detail Page (e.g., project-detail.css) */
+
+/* Apply to the <body> tag if you have <body class="project-detail-page"> */
+/* Or use as a wrapper div if you prefer */
+.project-detail-page {
+  font-family: var(--font-primary); /* Uses Lora from your base CSS */
+  background-color: var(--color-bg); /* Eggshell White */
+  color: var(--color-text); /* Soft Charcoal */
+  /* padding: var(--space-lg); Removed to allow full-bleed header/footer and main-content-area to control its padding */
+  /* max-width: 1200px; /* Moved to main-content-area for better structure */
+  /* margin: 0 auto; /* Moved to main-content-area */
+}
+
+/* Main content wrapper for the project details */
+/* The class .main-content-area is already defined in your base style.css [1]
+   to handle max-width and centering if it uses grid-column: main.
+   If not using the portfolio-container grid directly on this page's body,
+   the following ensures it's centered and has a max-width. */
+.main-content-area {
+  max-width: 1200px; /* Or your preferred content width */
+  margin: 0 auto; /* Centers the content area */
+  padding: var(--space-lg) var(--space-md); /* Vertical and horizontal padding */
+}
+
+/* Container for all project-specific content blocks */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg); /* Space between project sections */
+}
+
+/* Hero image styling */
+.project-hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md); /* 8px */
+  box-shadow: var(--shadow-md); /* Standard medium shadow */
+  margin-bottom: var(--space-lg); /* Space below hero image */
+}
+
+/* Common styling for individual sections within the project */
+.project-overview,
+.project-features,
+.project-technologies,
+.project-gallery, /* Added project-gallery to this rule */
+.project-challenges-learnings,
+.project-links {
+  background-color: var(--color-primary); /* Pale Peach */
+  padding: var(--space-md); /* 24px */
+  border-radius: var(--border-radius-md); /* 8px */
+  box-shadow: var(--shadow-sm); /* Light shadow */
+}
+
+/* Headings within project sections */
+.project-overview h3,
+.project-features h3,
+.project-technologies h3,
+.project-gallery h3, /* Added project-gallery h3 */
+.project-challenges-learnings h3,
+.project-links h3 {
+  /* font-family: 'Instrument Serif', serif; [1, 3] Specific font for project section titles */
+  font-size: var(--text-xl); /* Approx 24px to 40px */
+  margin-bottom: var(--space-sm); /* 16px */
+  color: var(--color-accent); /* Muted Terracotta Red */
+}
+
+/* Styling for unordered lists in features and technologies */
+.project-features ul,
+.project-technologies ul {
+  list-style-type: disc;
+  padding-left: var(--space-lg); /* Indent list items */
+  margin-left: var(--space-xs); /* Align with heading text better */
+}
+
+.project-features li,
+.project-technologies li {
+  margin-bottom: var(--space-xs); /* Space between list items */
+}
+
+/* Gallery styling */
+.image-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: var(--space-md); /* Gap between images */
+  margin-top: var(--space-sm); /* Space above the grid if there's content before it in .project-gallery */
+}
+
+.image-gallery-grid img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: var(--border-radius-sm); /* 4px */
+  box-shadow: var(--shadow-sm);
+  object-fit: cover; /* Ensure images fill their grid cell nicely */
+}
+
+/* Styling for buttons within the project-links section */
+.project-links .button {
+  /* Uses .button base styles from style.css */
+  margin-right: var(--space-sm); /* Space between buttons if inline */
+  margin-bottom: var(--space-sm); /* Space below buttons if they wrap */
+}
+
+/* Ensure .full-bleed for header and footer takes full width if not in a portfolio-container grid */
+/* Your base style.css already has .full-bleed with width: 100% and grid-column: full */
+/* The site-header and site-footer classes from base style.css will apply their background and padding. */
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .main-content-area {
+    padding: var(--space-md) var(--space-sm); /* Adjust padding for smaller screens */
+  }
+
+  .project-content {
+    gap: var(--space-md); /* Reduce gap between sections */
+  }
+
+  .image-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller images on mobile */
+  }
+
+  .project-links .button {
+    display: block; /* Stack buttons vertically */
+    width: 100%;    /* Make buttons full width */
+    margin-right: 0; /* Remove right margin when stacked */
+    margin-bottom: var(--space-sm); /* Keep bottom margin */
+  }
+  .project-links .button:last-child {
+    margin-bottom: 0; /* Remove margin from last button */
+  }
 }
