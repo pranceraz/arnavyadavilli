@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title 1 - Arnav Yadavilli</title>
+    <title>TAFLab Ocean Drones - Arnav Yadavilli</title>
     <link rel="stylesheet" href="../../css/base/style.css"> <!-- Link to your main stylesheet -->
     <!-- You might want a specific stylesheet for project pages if needed -->
     <!-- <link rel="stylesheet" href="css/project-detail.css"> -->
@@ -14,67 +14,81 @@
         <h1>Arnav Yadavilli</h1>
         <nav class="navbar">
             <ul>
-                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../../index.html#blog" class="nav-link">Blog</a></li>
                 <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
                 <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
-                 <li><a href="index.html" class="nav-link">&larr; Back to Portfolio</a></li> <!-- Back link -->
+                 <li><a href="../../index.html" class="nav-link">&larr; Back to Portfolio</a></li> <!-- Back link -->
             </ul>
         </nav>
     </header>
 
     <main class="main-content-area">
         <article class="project-content">
-            <h2>Project Title 1</h2>
+            <h2>TAFLab Ocean Drones Project</h2>
             
             <div class="project-hero-image">
-                <img src="project1-large.jpg" alt="Detailed view of Project 1">
+                <img src="../../src/img/taflab_drone.jpg" alt="Autonomous sailboat drone at Berkeley Marina">
             </div>
 
+            <h3>Overview</h3>
             <section class="project-overview">
-                <h3>Overview</h3>
-                <p>This is where you provide a detailed description of Project 1. Talk about the problem it solves, your role, the process, and the solution. Be thorough and engaging.</p>
+                <p>I'm developing embedded firmware for autonomous sailboat drones at UC Berkeley's TAFLab as part of the CAPTAIn project. Working under Dr. Reza Alam with PhD mentor Arsh Anis Khan, I built the complete STM32-based control system from scratch and conduct live testing at Berkeley Marina. My work enables these boats to autonomously collect oceanographic data for months without human intervention.</p>
             </section>
 
+            <h3>What I Built</h3>
             <section class="project-features">
-                <h3>Key Features</h3>
                 <ul>
-                    <li>Feature A: Description of feature A.</li>
-                    <li>Feature B: Description of feature B.</li>
-                    <li>Feature C: Description of feature C.</li>
+                    <li><strong>Complete Firmware Architecture:</strong> Developed entire embedded system using STM32H723ZGT6 microcontroller</li>
+                    <li><strong>Custom Sensor Drivers:</strong> Built HAL-based drivers for GPS, IMU, wind sensors with interrupt-driven architecture</li>
+                    <li><strong>PWM Control Systems:</strong> Programmed precise servo control for sail and rudder positioning</li>
+                    <li><strong>Communication Protocols:</strong> Developed satellite and radio systems for real-time data transmission</li>
                 </ul>
             </section>
 
+            <h3>Technologies Used</h3>
             <section class="project-technologies">
-                <h3>Technologies Used</h3>
                 <ul>
-                    <li>Technology X (e.g., Python, React)</li>
-                    <li>Tool Y (e.g., Figma, VS Code)</li>
-                    <li>Platform Z (e.g., AWS, ESP32)</li>
+                    <li>STM32H723ZGT6 with LQFP144 MPU, C Programming</li>
+                    <li>STM32 HAL Library, DMA, Interrupt-driven architecture</li>
+                    <li>Marine-grade sensors, Satellite communication systems</li>
                 </ul>
             </section>
 
+            <h3>Testing & Data Collection</h3>
+            <section class="project-testing">
+                <p>Conducted extensive live testing at <strong>Berkeley Marina</strong>, collecting <strong>40+ hours of operational data weekly</strong>. Validated navigation algorithms, sensor integration, and communication systems in real marine conditions. Worked in a startup-like environment developing <strong>10 prototypes</strong> for live ocean testing.</p>
+            </section>
+            
+            <h3>Gallery / Screenshots</h3>
             <section class="project-gallery">
-                <h3>Gallery / Screenshots</h3>
                 <div class="image-gallery-grid">
-                    <img src="project1-screenshot1.jpg" alt="Screenshot 1 of Project 1">
-                    <img src="project1-screenshot2.jpg" alt="Screenshot 2 of Project 1">
+                    <img src="../img/berkeley_marina_testing.jpg" alt="Testing autonomous sailboat at Berkeley Marina">
+                    <img src="../img/stm32_firmware_code.png" alt="STM32 firmware development">
+                    <img src="../img/sensor_integration.jpg" alt="Sensor integration and debugging">
+                    <img src="../img/team_at_marina.jpg" alt="TAFLab team conducting tests">
                     <!-- Add more images or videos -->
                 </div>
             </section>
 
+            <h3>Challenges & Learnings</h3>
             <section class="project-challenges-learnings">
-                <h3>Challenges & Learnings</h3>
-                <p>Discuss any challenges you faced during the project and what you learned from the experience.</p>
+                <p><strong>Marina Rescue Missions:</strong> Became surprisingly good at kayaking out to retrieve boats that lost connection mid-test. Nothing teaches you to build better failsafe systems quite like having to paddle after your own autonomous creation before it explores San Francisco Bay solo.<br><br>
+
+                <strong>Technical Challenges:</strong> Built reliable embedded systems for harsh marine environments, focusing on fault tolerance and real-time performance. The STM32 platform deepened my embedded programming skills while iterative prototype development taught me system optimization and rapid debugging techniques[5].</p>
             </section>
 
-            <section class="project-links">
-                <h3>Live Demo / Source Code</h3>
-                <p>
-                    <a href="[link-to-live-demo]" class="button" target="_blank" rel="noopener noreferrer">View Live Demo</a>
-                    <a href="[link-to-github-repo]" class="button" target="_blank" rel="noopener noreferrer">View Source Code</a>
-                </p>
+            <h3>Why This Matters</h3>
+            <section class="project-impact">
+                <p>My firmware enables autonomous sailboats to collect oceanographic data for climate research and shipping route optimization. Unlike traditional approaches, sailboats can stay out for months using wind power, position themselves precisely where needed, and operate quietly without disturbing marine life.</p>
             </section>
+
+           <center> <section class="project-links">
+                <h3>Source Code</h3>
+                <p>
+                    <a href="https://github.com/Berkeley-TafLab-New/STM32" class="button" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </p>
+            </section></center>
 
         </article>
     </main>

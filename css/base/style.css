@@ -472,7 +472,10 @@ a:hover, a:focus {
 /* Gallery styling */
 .image-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(2, 1fr); /* Defines exactly two equal-width columns */
+  /* Alternatively, for a minimum width per column:
+     grid-template-columns: repeat(2, minmax(200px, 1fr));
+  */
   gap: var(--space-md); /* Gap between images */
   margin-top: var(--space-sm); /* Space above the grid if there's content before it in .project-gallery */
 }
