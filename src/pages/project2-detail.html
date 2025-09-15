@@ -3,99 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAFLab Ocean Drones - Arnav Yadavilli</title>
+    <title>Project Title 1 - Arnav Yadavilli</title>
     <link rel="stylesheet" href="../../css/base/style.css"> <!-- Link to your main stylesheet -->
     <!-- You might want a specific stylesheet for project pages if needed -->
     <!-- <link rel="stylesheet" href="css/project-detail.css"> -->
 </head>
 <body class="project-detail-page"> <!-- Consider a different class for project detail page styling -->
-
     <header class="site-header full-bleed">
-        <h1>Arnav Yadavilli</h1>
-        <nav class="navbar">
+    <h1>Arnav Yadavilli</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../../index.html#projects" class="nav-link">Projects</a></li>
+            <li><a href="../../index.html#blog" class="nav-link">Blog</a></li>
+            <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
+            <li><a href="../../index.html" class="nav-link">&larr; Back to Portfolio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content-area">
+    <article class="project-content">
+        <h2>Machine Learning & AI Projects</h2>
+
+        <div class="project-hero-image">
+            <img src="../img/ml_cover.jpg" alt="Machine Learning and AI projects cover">
+        </div>
+
+        <h3>Overview</h3>
+        <section class="project-overview">
+            <p>Collection of applied ML projects spanning classification, regression, deep learning, and reinforcement learning completed January–June 2025, with emphasis on rigorous preprocessing, vectorization, model validation, and PyTorch-based experimentation aligned with data science best practices.</p>
+        </section>
+
+        <hr>
+
+        <h3>Email Spam Filtering with Logistic Regression and PCA</h3>
+        <section class="project-features">
+            <p><strong>Timeline:</strong> January 2025 – May 2025</p>
             <ul>
-                <li><a href="../../index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="../../index.html#blog" class="nav-link">Blog</a></li>
-                <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
-                <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
-                 <li><a href="../../index.html" class="nav-link">&larr; Back to Portfolio</a></li> <!-- Back link -->
+                <li><strong>Pipeline:</strong> Built an end-to-end classifier using logistic regression with PCA for dimensionality reduction to detect spam vs ham at scale.</li>
+                <li><strong>Text Processing:</strong> Cleaned raw emails (lowercasing, tokenization, stopword removal, lemmatization), then vectorized with TF‑IDF to improve interpretability and sparsity control.</li>
+                <li><strong>Dimensionality:</strong> Applied PCA to mitigate multicollinearity and noise, improving training stability and generalization on high‑dimensional text vectors.</li>
+                <li><strong>Validation:</strong> Stratified K‑fold evaluation with precision/recall emphasis; threshold tuning for business‑appropriate false positive rates.</li>
             </ul>
-        </nav>
-    </header>
+        </section>
 
-    <main class="main-content-area">
-        <article class="project-content">
-            <h2>TAFLab Ocean Drones Project</h2>
-            
-            <div class="project-hero-image">
-                <img src="../../g" alt="Autonomous sailboat drone at Berkeley Marina">
+        <h3>Technologies Used</h3>
+        <section class="project-technologies">
+            <ul>
+                <li>Python, scikit‑learn (LogisticRegression, PCA, Pipeline, GridSearchCV)</li>
+                <li>NLTK / spaCy for preprocessing, scikit‑learn’s TfidfVectorizer</li>
+                <li>Matplotlib/Seaborn for PR/ROC diagnostics</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <h3>Housing Price Prediction with Linear Regression</h3>
+        <section class="project-features">
+            <p><strong>Timeline:</strong> January 2025 – May 2025</p>
+            <ul>
+                <li><strong>Modeling:</strong> Implemented and compared linear, ridge, and lasso regression for price prediction on real‑world housing data with multiple features.</li>
+                <li><strong>Data Work:</strong> Performed cleaning, outlier handling, feature engineering (log transforms, interactions), and scaling with robust validation splits.</li>
+                <li><strong>Evaluation:</strong> Optimized RMSE/MAE via cross‑validation; analyzed coefficients and SHAP for interpretability and feature influence.</li>
+            </ul>
+        </section>
+
+        <h3>Technologies Used</h3>
+        <section class="project-technologies">
+            <ul>
+                <li>Pandas, NumPy, scikit‑learn (Linear/Ridge/Lasso, Pipeline)</li>
+                <li>SHAP for explainability, Seaborn for EDA</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <h3>Handwritten Digit Recognition using Neural Networks</h3>
+        <section class="project-features">
+            <p><strong>Timeline:</strong> January 2025 – June 2025</p>
+            <ul>
+                <li><strong>Task:</strong> Trained a neural network classifier for handwritten digit recognition on benchmark datasets, achieving high accuracy.</li>
+                <li><strong>Training:</strong> Implemented normalization, augmentation, and learning‑rate scheduling; tuned depth, width, dropout, and regularization.</li>
+                <li><strong>Results:</strong> Monitored convergence and generalization via validation curves and confusion matrices; optimized for robust performance.</li>
+            </ul>
+        </section>
+
+        <h3>Technologies Used</h3>
+        <section class="project-technologies">
+            <ul>
+                <li>PyTorch for modeling and training loops</li>
+                <li>Torchvision datasets/transforms, CUDA where available</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <h3>Reinforcement Learning for Pacman Agents</h3>
+        <section class="project-features">
+            <p><strong>Timeline:</strong> January 2025 – May 2025</p>
+            <ul>
+                <li><strong>Algorithms:</strong> Implemented Q‑learning and related RL methods to train Pacman agents for optimal gameplay in complex environments.</li>
+                <li><strong>Design:</strong> Experimented with reward shaping, exploration strategies, and discount/learning‑rate schedules to stabilize learning.</li>
+                <li><strong>Metrics:</strong> Evaluated episodic return, win rate, and policy stability; iterated on hyperparameters to maximize performance.</li>
+            </ul>
+        </section>
+
+        <h3>Technologies Used</h3>
+        <section class="project-technologies">
+            <ul>
+                <li>Python, NumPy, custom RL framework for tabular/Q‑learning</li>
+                <li>Matplotlib for training curves and policy diagnostics</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <h3>Neural Network‑Based Pacman Gameplay</h3>
+        <section class="project-features">
+            <p><strong>Timeline:</strong> January 2025 – May 2025</p>
+            <ul>
+                <li><strong>Scope:</strong> Designed and trained a neural network policy to play effectively in extremely large and challenging game environments.</li>
+                <li><strong>Approach:</strong> Integrated deep learning with PyTorch for function approximation; tuned architectures, replay, and training regimes.</li>
+                <li><strong>Outcome:</strong> Improved decision‑making, generalization, and adaptability compared to tabular methods in high‑dimensional states.</li>
+            </ul>
+        </section>
+
+        <h3>Technologies Used</h3>
+        <section class="project-technologies">
+            <ul>
+                <li>PyTorch, experience replay/batching, target updates</li>
+                <li>Evaluation harness for large‑map stress testing</li>
+            </ul>
+        </section>
+
+        <h3>Gallery / Screenshots</h3>
+        <section class="project-gallery">
+            <div class="image-gallery-grid">
+                <img src="../img/spam_pipeline.jpg" alt="Spam classification pipeline visualization">
+                <img src="../img/housing_regression.jpg" alt="Housing regression EDA and predictions">
+                <img src="../img/mnist_training.jpg" alt="Neural network training curves for digits">
+                <img src="../img/pacman_rl.jpg" alt="Pacman RL training and gameplay">
             </div>
+        </section>
 
-            <h3>Overview</h3>
-            <section class="project-overview">
-                <p>I'm developing embedded firmware for autonomous sailboat drones at UC Berkeley's TAFLab as part of the CAPTAIn project. Working under Dr. Reza Alam with PhD mentor Arsh Anis Khan, I built the complete STM32-based control system from scratch and conduct live testing at Berkeley Marina. My work enables these boats to autonomously collect oceanographic data for months without human intervention.</p>
-            </section>
+        <h3>Challenges & Learnings</h3>
+        <section class="project-challenges-learnings">
+            <p><strong>Generalization vs. Complexity:</strong> Learned to balance dimensionality and interpretability using PCA for text vectors and regularization for linear models to prevent overfitting while preserving signal.</p>
+            <p><strong>Training Stability:</strong> In deep models and RL, disciplined preprocessing, scheduler tuning, and replay strategies were critical for stable convergence and robust performance in large state spaces.</p>
+        </section>
 
-            <h3>What I Built</h3>
-            <section class="project-features">
-                <ul>
-                    <li><strong>Complete Firmware Architecture:</strong> Developed entire embedded system using STM32H723ZGT6 microcontroller</li>
-                    <li><strong>Custom Sensor Drivers:</strong> Built HAL-based drivers for GPS, IMU, wind sensors with interrupt-driven architecture</li>
-                    <li><strong>PWM Control Systems:</strong> Programmed precise servo control for sail and rudder positioning</li>
-                    <li><strong>Communication Protocols:</strong> Developed satellite and radio systems for real-time data transmission</li>
-                </ul>
-            </section>
+        <h3>Why This Matters</h3>
+        <section class="project-impact">
+            <p>These projects demonstrate end‑to‑end ML capability: from preprocessing and feature engineering to model design, evaluation, and iteration, with an emphasis on reproducibility, diagnostics, and deployment‑readiness.</p>
+        </section>
 
-            <h3>Technologies Used</h3>
-            <section class="project-technologies">
-                <ul>
-                    <li>STM32H723ZGT6 with LQFP144 MPU, C Programming</li>
-                    <li>STM32 HAL Library, DMA, Interrupt-driven architecture</li>
-                    <li>Marine-grade sensors, Satellite communication systems</li>
-                </ul>
-            </section>
-
-            <h3>Testing & Data Collection</h3>
-            <section class="project-testing">
-                <p>Conducted extensive live testing at <strong>Berkeley Marina</strong>, collecting <strong>40+ hours of operational data weekly</strong>. Validated navigation algorithms, sensor integration, and communication systems in real marine conditions. Worked in a startup-like environment developing <strong>10 prototypes</strong> for live ocean testing.</p>
-            </section>
-            
-            <h3>Gallery / Screenshots</h3>
-            <section class="project-gallery">
-                <div class="image-gallery-grid">
-                    <img src="../img/berkeley_marina_testing.jpg" alt="Testing autonomous sailboat at Berkeley Marina">
-                    <img src="../img/taflab_images/ocean_drone_cover.jpg" alt="STM32 firmware development">
-                    <img src="../img/sensor_integration.jpg" alt="Sensor integration and debugging">
-                    <img src="../img/team_at_marina.jpg" alt="TAFLab team conducting tests">
-                    <!-- Add more images or videos -->
-                </div>
-            </section>
-
-            <h3>Challenges & Learnings</h3>
-            <section class="project-challenges-learnings">
-                <p><strong>Marina Rescue Missions:</strong> Became surprisingly good at kayaking out to retrieve boats that lost connection mid-test. Nothing teaches you to build better failsafe systems quite like having to paddle after your own autonomous creation before it explores San Francisco Bay solo.<br><br>
-
-                <strong>Technical Challenges:</strong> Built reliable embedded systems for harsh marine environments, focusing on fault tolerance and real-time performance. The STM32 platform deepened my embedded programming skills while iterative prototype development taught me system optimization and rapid debugging techniques[5].</p>
-            </section>
-
-            <h3>Why This Matters</h3>
-            <section class="project-impact">
-                <p>My firmware enables autonomous sailboats to collect oceanographic data for climate research and shipping route optimization. Unlike traditional approaches, sailboats can stay out for months using wind power, position themselves precisely where needed, and operate quietly without disturbing marine life.</p>
-            </section>
-
-           <center> <section class="project-links">
+        <center>
+            <section class="project-links">
                 <h3>Source Code</h3>
                 <p>
-                    <a href="https://github.com/Berkeley-TafLab-New/STM32" class="button" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                    <!-- Replace with actual repos as available -->
+                    <a href="https://github.com/arnavyadavilli" class="button" target="_blank" rel="noopener noreferrer">View Repositories</a>
                 </p>
-            </section></center>
+            </section>
+        </center>
 
-        </article>
-    </main>
+    </article>
+</main>
 
-    <footer class="site-footer full-bleed">
-        <p>&copy; Arnav Yadavilli</p>
-    </footer>
+<footer class="site-footer full-bleed">
+    <p>&copy; Arnav Yadavilli</p>
+</footer>
+
 
 </body>
 </html>
