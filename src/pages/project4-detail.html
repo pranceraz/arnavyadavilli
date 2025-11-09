@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title 1 - Arnav Yadavilli</title>
-    <link rel="stylesheet" href="../../css/base/style.css"> <!-- Link to your main stylesheet -->
-    <!-- You might want a specific stylesheet for project pages if needed -->
-    <!-- <link rel="stylesheet" href="css/project-detail.css"> -->
+    <title>Guitar Hero Rhythm Game - Arnav Yadavilli</title>
+    <link rel="stylesheet" href="../../css/base/style.css">
 </head>
-<body class="project-detail-page"> <!-- Consider a different class for project detail page styling -->
+<body class="project-detail-page">
 
     <header class="site-header full-bleed">
         <h1>Arnav Yadavilli</h1>
@@ -18,60 +16,76 @@
                 <li><a href="index.html#blog" class="nav-link">Blog</a></li>
                 <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
                 <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
-                 <li><a href="index.html" class="nav-link">&larr; Back to Portfolio</a></li> <!-- Back link -->
+                 <li><a href="index.html" class="nav-link">&larr; Back to Portfolio</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main-content-area">
         <article class="project-content">
-            <h2>Project Title 1</h2>
+            <h2>Guitar Hero Rhythm Game</h2>
             
             <div class="project-hero-image">
-                <img src="project1-large.jpg" alt="Detailed view of Project 1">
+                <img src="project1-large.jpg" alt="Custom-built Guitar Hero system with ESP32 and button matrix">
             </div>
 
             <section class="project-overview">
                 <h3>Overview</h3>
-                <p>This is where you provide a detailed description of Project 1. Talk about the problem it solves, your role, the process, and the solution. Be thorough and engaging.</p>
+                <p>This project started because I wanted to mess around with FreeRTOS on an ESP32 (pretty cool stuff!). The goal was to get multitasking working alongside an interactive UI while keeping everything real-time. After a ton of brainstorming, we thought up this musical glove idea which later evolved into a full Guitar Hero-style game. The system uses multiple FreeRTOS tasks running concurrently—one handling button input scanning, another managing the display and scrolling note highway, and a third controlling audio output and timing. The challenge was synchronizing these independent tasks without blocking, creating a responsive gaming experience where notes scroll down the screen and players must press the correct buttons in time with the music.</p>
             </section>
 
             <section class="project-features">
                 <h3>Key Features</h3>
                 <ul>
-                    <li>Feature A: Description of feature A.</li>
-                    <li>Feature B: Description of feature B.</li>
-                    <li>Feature C: Description of feature C.</li>
+                    <li>Real-time multitasking: Multiple FreeRTOS tasks handle input scanning, display updates, and audio playback independently without blocking each other, taking full advantage of ESP32's dual-core architecture</li>
+                    <li>Guitar Hero-style gameplay: Notes scroll down a highway display, and players press corresponding colored buttons in time with the music to score points and maintain a score multiplier</li>
+                    <li>Hardware button matrix: Custom-designed button array with color-coded inputs mapped to musical notes, using resistor pull-ups and direct GPIO connections</li>
+                    <li>Score tracking and combo system: Consecutive successful hits increase the score multiplier, while missed notes break the combo and can lead to failure if too many are missed</li>
+                    <li>Interactive visual feedback: Real-time display showing note highway, current score, combo multiplier, and performance meter</li>
                 </ul>
             </section>
 
             <section class="project-technologies">
                 <h3>Technologies Used</h3>
                 <ul>
-                    <li>Technology X (e.g., Python, React)</li>
-                    <li>Tool Y (e.g., Figma, VS Code)</li>
-                    <li>Platform Z (e.g., AWS, ESP32)</li>
+                    <li>ESP32 microcontroller with dual-core processor for concurrent task execution</li>
+                    <li>ESP-IDF and FreeRTOS for real-time task scheduling and inter-task communication</li>
+                    <li>SSD1306 OLED display (128x64) for visual feedback via I2C interface</li>
+                    <li>C programming for low-level embedded systems development</li>
+                    <li>Piezo buzzer with PWM tone generation for audio output</li>
+                    <li>Custom perfboard circuit with organized wiring and IC multiplexing</li>
                 </ul>
             </section>
 
             <section class="project-gallery">
-                <h3>Gallery / Screenshots</h3>
+                <h3>Gallery / Demo Videos</h3>
                 <div class="image-gallery-grid">
-                    <img src="project1-screenshot1.jpg" alt="Screenshot 1 of Project 1">
-                    <img src="project1-screenshot2.jpg" alt="Screenshot 2 of Project 1">
-                    <!-- Add more images or videos -->
+                    <img src="20250820_160105.jpg" alt="Perfboard prototype showing ESP32, button matrix, and organized wiring">
+                </div>
+                
+                <div class="video-embed">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/videoseries?list=PLjLLY7haKjj2mxT1m7A-NouhA4GXxFFkw" 
+                        title="Guitar Hero Project Demo Videos" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </section>
 
             <section class="project-challenges-learnings">
                 <h3>Challenges & Learnings</h3>
-                <p>Discuss any challenges you faced during the project and what you learned from the experience.</p>
+                <p>The toughest part was getting three separate tasks—input, display, and audio—to stay in sync without any noticeable lag. If the timing's even slightly off, the whole game becomes unplayable. FreeRTOS queues and semaphores saved me here, letting button presses register instantly while keeping audio perfectly locked to the beat. Setting up priority-based scheduling so time-critical audio could interrupt display updates when needed was crucial for keeping rhythm accuracy tight.</p>
+                
+                <p>On the hardware side, getting a reliable button matrix took way more iterations than I expected. You can see in the photo how dense the wiring gets—preventing crosstalk between all those signal lines. Finding the sweet spot between software debouncing and hardware filtering made all the difference for responsive gameplay.</p>
+                
+                <p>This project really cemented my understanding of real-time systems and task scheduling. More importantly, it taught me how to architect systems where multiple components need to work in perfect sync—exactly the kind of thinking that translates directly to robotics and control systems I want to work on.</p>
             </section>
 
             <section class="project-links">
-                <h3>Live Demo / Source Code</h3>
+                <h3>Source Code</h3>
                 <p>
-                    <a href="[link-to-live-demo]" class="button" target="_blank" rel="noopener noreferrer">View Live Demo</a>
                     <a href="[link-to-github-repo]" class="button" target="_blank" rel="noopener noreferrer">View Source Code</a>
                 </p>
             </section>
