@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photometric Stereo Device (Indic Vision) - Arnav Yadavilli</title>
+  <link rel="stylesheet" href="../../css/base/style.css">
+</head>
+
+<body class="project-detail-page">
+
+  <header class="site-header full-bleed">
+    <h1>Arnav Yadavilli</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../../index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
+        <li><a href="../../index.html" class="nav-link">&larr; Back to Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content-area">
+    <article class="project-content">
+      <h2>Photometric Stereo Device (Indic Vision)</h2>
+
+      <div style="width:100%; height:360px; overflow:hidden;">
+        <img
+            src="../../src/img/IndicVision_photos/photometric_hero_img.jpg"
+            alt="Photometric stereo rig with DSLR and LED ring"
+            style="width:100%; height:110%; object-fit:cover; object-position:center; display:block;"
+        >
+      </div>
+        
+      <section class="project-overview">
+        <h3>Overview</h3>
+        <p>
+          At Indic Vision, I built a compact near-field photometric stereo device to recover fine surface detail as a normal map, and then integrate normals into a height/depth map for 3D reconstruction.
+        </p>
+        <p>
+          The system captures a stack of images from a fixed Canon DSLR viewpoint while switching illumination across a 12-LED ring; varying intensity under different light directions lets the pipeline estimate surface orientation per pixel and reconstruct shape.
+        </p>
+      </section>
+
+      <section class="project-features">
+        <h3>Key Contributions</h3>
+        <ul>
+          <li>Designed and assembled the capture rig: Canon DSLR + 12-LED ring illumination for repeatable multi-light imaging.</li>
+          <li>Built a reliable capture workflow: automated DSLR shooting from a laptop using PyAutoGUI so entire image stacks could be acquired consistently without manual clicking.</li>
+          <li>Implemented lighting control: started with Arduino for LED sequencing and migrated to ESP32 later for a more flexible/faster iteration loop.</li>
+          <li>Developed the reconstruction pipeline: preprocessing + photometric stereo normal estimation + normal integration to produce depth/height maps.</li>
+          <li>Focused on real-world robustness: handled practical issues like exposure consistency, alignment drift, shadows/specular highlights, and noisy gradients that break depth integration.</li>
+        </ul>
+      </section>
+
+      <section class="project-technologies">
+        <h3>Technologies Used</h3>
+        <ul>
+          <li>Python (pipeline + automation tooling)</li>
+          <li>OpenCV (image alignment, masking, denoising/preprocessing)</li>
+          <li>PyAutoGUI (automated DSLR capture via laptop control)</li>
+          <li>Arduino → ESP32 (12-LED ring sequencing/control)</li>
+          <li>Photometric stereo + near-field lighting considerations (point/near lights violate the distant/parallel-light assumption used in basic PS)</li>
+          <li>Normal integration for depth/height (integrability-enforcing approaches such as Frankot–Chellappa are commonly used)</li>
+        </ul>
+      </section>
+
+      <section class="project-gallery">
+        <h3>Gallery / Demo</h3>
+
+        <div class="image-gallery-grid">
+          <!-- IMAGE SLOT 1: photo of the full rig -->
+          <figure>
+            <img src="../../src/img/IndicVision_photos/circuit_board.jpg" alt="Full photometric stereo rig: DSLR + LED ring + controller">
+            <figcaption>Capture rig ESP32 circuit_board</figcaption>
+          </figure>
+
+          <!-- IMAGE SLOT 2: montage of 12 input images under different lights -->
+          <figure>
+            <img src="../../src/img/IndicVision_photos/ver2_cad.png" alt="Input image stack captured under different LED directions">
+            <figcaption> Cadding the Prototype</figcaption>
+          </figure>
+
+          <!-- IMAGE SLOT 3: normal map output -->
+          <figure>
+            <img src="../../src/img/IndicVision_photos/ver1_in action.jpg" alt="Recovered normal map visualization">
+            <figcaption> Rig in action </figcaption>
+          </figure>
+
+          <!-- IMAGE SLOT 4: depth/height map output -->
+          <figure>
+            <img src="../../src/img/IndicVision_photos/Prototype2.jpeg" alt="Integrated depth or height map visualization">
+            <figcaption>Prototype 2.</figcaption>
+          </figure>
+
+          <!-- IMAGE SLOT 5: depth/height map output -->
+          <figure>
+            <img src="../../src/img/IndicVision_photos/hack.jpg" alt="Integrated depth or height map visualization">
+            <figcaption>Prototype 1 barebones</figcaption>
+          </figure>
+
+          <!-- IMAGE SLOT 4: depth/height map output -->
+          <figure>
+            <img src="../../src/img/IndicVision_photos/depthmap" alt="Integrated depth or height map visualization">
+            <figcaption>normal_map, due to project confidentiality I am not able to show the result images. :[</figcaption>
+          </figure>
+
+
+
+          <!-- Add more <figure> blocks for failure cases, specular handling, masks, etc. -->
+        </div>
+
+        <!-- VIDEO OPTION A (local MP4): put demo.mp4 in this folder and uncomment -->
+        <!--
+        <div class="video-embed">
+          <video controls preload="metadata" width="560">
+            <source src="demo.mp4" type="video/mp4">
+            Your browser does not support the HTML5 video element.
+          </video>
+        </div>
+        -->
+
+        <!-- VIDEO OPTION B (YouTube embed): replace VIDEO_ID and uncomment -->
+        <!--
+        <div class="video-embed">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Photometric Stereo Device Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        -->
+      </section>
+
+      <section class="project-challenges-learnings">
+        <h3>Challenges & Learnings</h3>
+        <p>
+          The main challenge was near-field behavior: since the LED ring is close to the object, lighting is better modeled as point/near lights (direction and falloff vary across the surface), which breaks the simple “one constant light direction per image” assumption of classical photometric stereo.
+        </p>
+        <p>
+          On the depth side, integrating normals is sensitive to noise and non-integrable gradients; enforcing integrability (often done with methods like Frankot–Chellappa) helps turn noisy normal-derived gradients into a consistent surface.
+        </p>
+        <p>
+          This project taught me how to build an end-to-end CV system where hardware repeatability, capture automation, and calibration matter as much as the math.
+        </p>
+      </section>
+
+      <section class="project-links">
+        <h3>Source Code</h3>
+        <p>
+          Source code is private (internal repository / project confidentiality).
+        </p>
+        <!-- Optional: add a public write-up link if you have one -->
+        <!--
+        <p>
+          <a href="YOUR_PUBLIC_WRITEUP_LINK" class="button" target="_blank" rel="noopener noreferrer">
+            View Public Write-up
+          </a>
+        </p>
+        -->
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer full-bleed">
+    <p>&copy; Arnav Yadavilli</p>
+  </footer>
+
+</body>
+</html>
