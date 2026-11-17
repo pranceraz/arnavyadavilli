@@ -1,7 +1,7 @@
 /* styles.css */
 
 /* 1. FONT IMPORTS ---------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&&display=swap&family=Goudy+Bookletter+1911&family=Instrument+Serif:ital@0;1');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 
 /* 2. CSS RESET (Josh Comeau's Custom CSS Reset) ---------- */
@@ -51,12 +51,14 @@ p, h1, h2, h3, h4, h5, h6 {
  /* --- NEW COLOR PALETTE 1: Soft Peach & Rose Garden --- */
   --color-bg: #FDFAF6;          /* Main page background (Eggshell White) */
   --color-primary: #fef2db;    /* Larger sections, card backgrounds (Pale Peach)   e7f1dc*/
-  --color-secondary: #c7736a;  /* Secondary buttons, borders, hover states (Dusty Rose Pink) */
+  --color-secondary: #9d4c44;  /* Secondary buttons, borders, hover states (Dusty Rose Pink) */
   --color-accent: #363636;     /* Call-to-action buttons, important links (Muted Terracotta Red) */
   --color-text: #363636;       /* Main body text, headings (Soft Charcoal) */
 
   /* Utility Colors (from new palette or generally useful) */
-  --color-white: #FFFFFF;      /* Pure white for contrast if needed */
+  --color-white: #FFFFFF;
+  --white: var(--color-white);
+  --color-border: #e7d7c7;      /* Pure white for contrast if needed */
   --color-black: #000000;      /* Pure black if needed (kept from old set, still useful) */
 
   /* Optional: Define hover/active states for your accent color */
@@ -522,4 +524,231 @@ a:hover, a:focus {
   .project-links .button:last-child {
     margin-bottom: 0; /* Remove margin from last button */
   }
+}
+
+/* Portfolio highlights and case-study results */
+.site-header {
+  padding-inline: var(--space-sm);
+}
+
+.navbar ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  padding-inline: 0.6rem;
+}
+
+.portfolio-container .main-content-area {
+  width: 100%;
+}
+
+.featured-grid,
+.benchmark-grid,
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+  gap: var(--space-md);
+}
+
+.featured-project {
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
+.featured-project h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: var(--text-2xl);
+  line-height: 1.1;
+}
+
+.project-type {
+  color: #843c35;
+  font-size: 0.87rem;
+  font-weight: 700;
+}
+
+.feature-result {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.feature-result strong {
+  display: block;
+  font-size: var(--text-xl);
+}
+
+.more-projects,
+.resume-section {
+  margin-top: var(--space-xl);
+}
+
+.resume-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--color-border);
+}
+
+.resume-section p,
+.method-grid p {
+  margin-bottom: 0;
+}
+
+.case-study {
+  max-width: 1120px;
+}
+
+.case-intro {
+  padding: clamp(1.25rem, 5vw, 3.5rem);
+}
+
+.case-intro h1 {
+  line-height: 1;
+}
+
+.case-intro .button {
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+.case-credit {
+  font-size: 0.9rem;
+}
+
+.method-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  padding: 0;
+  list-style: none;
+}
+
+.method-grid li,
+.benchmark-chart,
+.benchmark-details {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-sm);
+}
+
+.method-note,
+.benchmark-details {
+  margin-block: var(--space-md) var(--space-sm);
+}
+
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.chart-key,
+.chart-rows {
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.chart-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.chart-key i {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 2px;
+}
+
+.chart-rows li {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.4rem;
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.benchmark-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3.4rem;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar-track,
+.bar-fill {
+  display: block;
+  height: 0.5rem;
+  border-radius: 3px;
+}
+
+.bar-track {
+  background: #f5eee8;
+}
+
+.bar-fill {
+  width: var(--bar-width);
+}
+
+.learned {
+  background: var(--color-secondary);
+}
+
+.classic {
+  background: #656967;
+}
+
+.benchmark-details summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin-top: var(--space-sm);
+}
+
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.table-scroll caption,
+.table-scroll th:first-child {
+  text-align: left;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: var(--space-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table-scroll tbody td:last-child {
+  font-weight: 700;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
