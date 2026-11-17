@@ -2,166 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Make sure your title is relevant to you -->
-    <title>Arnav Yadavilli - Student, Engineer</title>
-    <!-- Ensure 'style.css' is the correct path and contains the CSS I provided -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Arnav Yadavilli's engineering portfolio, featuring robotics, computer vision, and optimization projects.">
+    <title>Arnav Yadavilli | Robotics &amp; Engineering</title>
     <link rel="stylesheet" href="css/base/style.css">
 </head>
 <body class="portfolio-container">
-
     <header class="site-header full-bleed">
         <h1>Arnav Yadavilli</h1>
-        <p>is an engineer, making amazing things.</p>
-         <nav class="navbar">
+        <p>Master’s student in robotics at the University of Michigan</p>
+        <nav class="navbar" aria-label="Main">
             <ul>
-                <li><a href="index.html#projects" class="nav-link">Projects</a></li> <!-- Added link to projects section -->
-                <li><a href="index.html#blog" class="nav-link">Blog</a></li> <!-- Link to new blog section -->
-                <li><a href="mailto:arnavyadavilli@gmail.com" class="nav-link">Email</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#resume" class="nav-link">Résumé</a></li>
+                <li><a href="mailto:yarnav@umich.edu" class="nav-link">Email</a></li>
                 <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
-                <li><a href="github.com/pranceraz" class="nav-link">Github</a></li>
+                <li><a href="https://github.com/pranceraz" class="nav-link">GitHub</a></li>
             </ul>
         </nav>
     </header>
-
     <main class="main-content-area">
-        <section id="projects" class="projects-section">
-            <h2>My Work</h2>
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">My Work</h2>
+            <div class="featured-grid">
+                <article class="card featured-project">
+                    <div class="card__content">
+                        <p class="project-type">Undergraduate thesis · Optimization</p>
+                        <h3>DeepHybrid</h3>
+                        <p>A graph neural network guides ant colony optimization to build shorter job-shop schedules.</p>
+                        <p class="feature-result"><strong>22–28%</strong> shorter makespans than classical ACO across six benchmarks.</p>
+                    </div>
+                    <div class="card__actions"><a href="src/pages/deephybrid.html" class="button">Explore DeepHybrid results</a></div>
+                </article>
+                <article class="card featured-project" id="multi-sg">
+                    <div class="card__content">
+                        <p class="project-type">In progress · Multi-robot perception</p>
+                        <h3>Multi SG</h3>
+                        <p>I’m building a shared scene graph so multiple robots can use what the team has seen while navigating an area.</p>
+                        <p>Inspired by DOV-SG, the perception pipeline labels and segments objects in RGB frames and models relationships between them in a shared map.</p>
+                    </div>
+                    <div class="card__actions"><a href="https://github.com/shaunak-roy/MultiSG" class="button">View Multi SG repository</a></div>
+                </article>
+            </div>
+            <h3 class="more-projects">More projects</h3>
             <div class="project-grid">
-
-                <!-- Project 1 -->
                 <article class="card">
-                    <div class="card__image-container">
-                        <!-- Add .lazy if using lazy loading JS, otherwise remove it or ensure your JS handles it -->
-                        <img src="src/img/Calsol_card.jpg" alt="Projaefiahbfkabflaect 1" class="card__image lazy">
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">Calsol</h3>
-                        <p class="card__description">UC Berkeley solar car team</p>
-                    </div>
-                    <div class="card__actions">
-                        <a href="src/pages/project1-detail.html" class="button">View Activity</a>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="card">
-                    <div class="card__image-container">
-                        <img src="src/img/AI_icon.avif" alt="Project 2"  class="card__image lazy">
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">AI/ML</h3>
-                        <p class="card__description">AI/ML projects i've undertaken</p>
-                    </div>
-                    <div class="card__actions">
-                        <a href="src/pages/project2-detail.html" class="button">View Activity</a>
-                    </div>
-                </article>
-
-                <!-- Add more projects here following the .card structure -->
-                 <!-- Project 3 -->
-                <article class="card">
-                    <div class="card__image-container">
-                        <img src="src/img/water_drone_card.jpg" alt="Project 3"  class="card__image lazy">
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">Autonomous Ocean Drone</h3>
-                        <p class="card__description">Sail powered STM32 based drone system</p>
-                    </div>
-                    <div class="card__actions">
-                        <a href="src/pages/project3-detail.html" class="button">View Project</a>
-                    </div>
-                </article>
-                <!-- Project 4 -->
-                <article class="card">
-                    <div class="card__image-container">
-                        <img src="src/img/IndicVision_photos/Cadding.png" alt="Project 2"  class="card__image lazy">
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">Photometric Stereo Imaging</h3>
-                        <p class="card__description">Reconstructing Normal Maps and Depth Maps in a compact form factor!!!</p>
-                    </div>
-                    <div class="card__actions">
-                        <a href="src/pages/project5-detail.html" class="button">View Project</a>
-                    </div>
+                    <div class="card__image-container"><img src="src/img/thumbnails/cadding.webp" alt="CAD model of the photometric stereo device" class="card__image" loading="lazy"></div>
+                    <div class="card__content"><h4 class="card__title">Photometric Stereo Imaging</h4><p>Compact imaging systems for detecting surface defects at IndicVision.</p></div>
+                    <div class="card__actions"><a href="src/pages/project5-detail.html" class="button">View imaging project</a></div>
                 </article>
                 <article class="card">
-                    <div class="card__image-container">
-                        <img src="src/img/realtimergui.jpg" alt="Project 5"  class="card__image lazy">
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">Ongoing / Upcoming</h3>
-                        <p class="card__description">Look Forward to this!</p>
-                    </div>
-                    <div class="card__actions">
-                        <a href="src/pages/project4-detail.html" class="button">View Activity</a>
-                    </div>
+                    <div class="card__image-container"><img src="src/img/thumbnails/water_drone_card.webp" alt="A sail-powered ocean drone" class="card__image" loading="lazy"></div>
+                    <div class="card__content"><h4 class="card__title">Autonomous Ocean Drone</h4><p>STM32 firmware and system bring-up for TAFLab’s sail-powered prototypes.</p></div>
+                    <div class="card__actions"><a href="src/pages/project3-detail.html" class="button">View ocean drone</a></div>
                 </article>
                 <article class="card">
-                    <div class="card__image-container">
-                        <img src="src/img/realtimergui.jpg" alt="Project 2"  class="card__image lazy">
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">ESP32 Rythym Game</h3>
-                        <p class="card__description">A fun guitar hero-esque game running on a ESP32</p>
-                    </div>
-                    <div class="card__actions">
-                        <a href="src/pages/project4-detail.html" class="button">View Project</a>
-                    </div>
+                    <div class="card__image-container"><img src="src/img/thumbnails/calsol_card.webp" alt="CalSol solar race car" class="card__image" loading="lazy"></div>
+                    <div class="card__content"><h4 class="card__title">CalSol Solar Racing</h4><p>Real-time telemetry and radio networking for UC Berkeley’s solar racing team.</p></div>
+                    <div class="card__actions"><a href="src/pages/project1-detail.html" class="button">View CalSol work</a></div>
                 </article>
-
+                <article class="card">
+                    <div class="card__image-container"><img src="src/img/thumbnails/3dprints_glove.webp" alt="3D-printed components for a wearable controller" class="card__image" loading="lazy"></div>
+                    <div class="card__content"><h4 class="card__title">ESP32 Rhythm Game</h4><p>A real-time rhythm game built in C with FreeRTOS.</p></div>
+                    <div class="card__actions"><a href="src/pages/project4-detail.html" class="button">View ESP32 project</a></div>
+                </article>
+                <article class="card">
+                    <div class="card__image-container"><img src="src/img/AI_icon.avif" alt="" class="card__image" loading="lazy"></div>
+                    <div class="card__content"><h4 class="card__title">Applied Machine Learning</h4><p>Course projects in classification, regression, and reinforcement learning.</p></div>
+                    <div class="card__actions"><a href="src/pages/project2-detail.html" class="button">View ML projects</a></div>
+                </article>
             </div>
         </section>
-        <!-- You can add other sections like "About Me", "Contact" here, also wrapped in <section> tags 
-            (Inside main.main-content-area, after the <section id="projects"> ... </section>) 
-
-    <section id="blog" class="blog-section">
-        <h2>My Blog</h2>
-        <div class="blog-grid"> Similar to project-grid for layout -->
-
-            <!-- Blog Post Preview 1
-            <article class="card blog-post-preview">  You can reuse 'card' or create 'blog-card' 
-                <div class="card__image-container">
-                     Optional: Image for the blog post 
-                    <img src="src/img/blog-post1-thumb.jpg" alt="Blog Post 1 Thumbnail" class="card__image lazy">
-                </div>
-                <div class="card__content">
-                    <h3 class="card__title">Title of My First Blog Post</h3>
-                    <p class="blog-post-meta"><time datetime="2024-05-21">May 21, 2024</time> - 5 min read</p>
-                    <p class="card__description">A short summary or excerpt of the blog post content to entice readers...</p>
-                </div>
-                <div class="card__actions">
-                    <a href="blog-post1.html" class="button">Read More</a>
-                </div>
-            </article>
-
-             Blog Post Preview 2 
-            <article class="card blog-post-preview">
-                <div class="card__image-container">
-                    <img src="src/img/blog-post2-thumb.jpg" alt="Blog Post 2 Thumbnail" class="card__image lazy">
-                </div>
-                <div class="card__content">
-                    <h3 class="card__title">Another Interesting Topic I Wrote About</h3>
-                    <p class="blog-post-meta"><time datetime="2024-05-15">May 15, 2024</time> - 7 min read</p>
-                    <p class="card__description">This post explores XYZ and offers insights into ABC. Click to learn more...</p>
-                </div>
-                <div class="card__actions">
-                    <a href="blog-post2.html" class="button">Read More</a>
-                </div>
-            </article>
-
-           Add more blog post previews here -->
-
-        </div>
-    </section>
-
+        <section class="resume-section project-overview" id="resume" aria-labelledby="resume-title">
+            <div>
+                <h2 id="resume-title">Résumé</h2>
+                <p>M.S. Robotics, University of Michigan<br>B.Tech. Mechanical Engineering, Shiv Nadar University</p>
+            </div>
+            <a href="src/documents/Arnav-Yadavilli-Resume.pdf" class="button">Open résumé (PDF)</a>
+        </section>
     </main>
-
-    <footer class="site-footer full-bleed">
-        <p>&copy; Arnav Yadavilli</p>
-    </footer>
-
-    <!-- If you implement lazy loading for images, you'd include your JavaScript here. Example: -->
-    <script src="src/js/lazy-load.js"></script>
+    <footer class="site-footer full-bleed"><p>&copy; Arnav Yadavilli</p></footer>
 </body>
 </html>
