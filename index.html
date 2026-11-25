@@ -7,18 +7,18 @@
     <title>Arnav Yadavilli | Robotics &amp; Engineering</title>
     <link rel="stylesheet" href="css/base/style.css">
 </head>
-<body class="portfolio-container">
+<body class="portfolio-container portfolio-home">
     <header class="site-header full-bleed">
         <h1>Arnav Yadavilli</h1>
         <p>Master’s student in robotics at the University of Michigan</p>
         <nav class="navbar" aria-label="Main">
             <ul>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#projects" class="nav-link nav-link--projects">Projects</a></li>
                 <li><a href="src/pages/vla-journal.html" class="nav-link">Research Journal</a></li>
                 <li><a href="#resume" class="nav-link">Résumé</a></li>
-                <li><a href="mailto:yarnav@umich.edu" class="nav-link">Email</a></li>
-                <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
-                <li><a href="https://github.com/pranceraz" class="nav-link">GitHub</a></li>
+                <li class="nav-contact"><a href="mailto:yarnav@umich.edu" class="nav-link">Email</a></li>
+                <li class="nav-contact"><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277" class="nav-link">LinkedIn</a></li>
+                <li class="nav-contact"><a href="https://github.com/pranceraz" class="nav-link">GitHub</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +26,7 @@
         <section id="projects" aria-labelledby="projects-title">
             <h2 id="projects-title">My Work</h2>
             <div class="featured-grid">
-                <article class="card featured-project">
+                <article class="card featured-project" id="deephybrid" tabindex="-1">
                     <div class="card__content">
                         <p class="project-type">Undergraduate thesis · Optimization</p>
                         <h3>DeepHybrid</h3>
@@ -45,30 +45,30 @@
                     <div class="card__actions"><a href="https://github.com/shaunak-roy/MultiSG" class="button">View Multi SG repository</a></div>
                 </article>
             </div>
-            <article class="card featured-project" style="margin-top:1.5rem"><div class="card__content"><p class="project-type">Research journal · In progress</p><h3>Vision-Language-Action Policies</h3><p>Can a robot use camera images and a written instruction to figure out what to do? I'm testing this with SmolVLA, LeRobot and LIBERO, and sharing my progress, setbacks and results along the way.</p></div><div class="card__actions"><a href="src/pages/vla-journal.html" class="button">Read the research journal</a></div></article>
+            <article class="card featured-project" id="vla-research" tabindex="-1" style="margin-top:1.5rem"><div class="card__content"><p class="project-type">Research journal · In progress</p><h3>Vision-Language-Action Policies</h3><p>Can a robot use camera images and a written instruction to figure out what to do? I'm testing this with SmolVLA, LeRobot and LIBERO, and sharing my progress, setbacks and results along the way.</p></div><div class="card__actions"><a href="src/pages/vla-journal.html" class="button">Read the research journal</a></div></article>
             <h3 class="more-projects">More projects</h3>
             <div class="project-grid">
-                <article class="card">
+                <article class="card" id="photometric-stereo" tabindex="-1">
                     <div class="card__image-container"><img src="src/img/thumbnails/cadding.webp" alt="CAD model of the photometric stereo device" class="card__image" loading="lazy"></div>
                     <div class="card__content"><h4 class="card__title">Photometric Stereo Imaging</h4><p>Compact imaging systems for detecting surface defects at IndicVision.</p></div>
                     <div class="card__actions"><a href="src/pages/project5-detail.html" class="button">View imaging project</a></div>
                 </article>
-                <article class="card">
+                <article class="card" id="ocean-drone" tabindex="-1">
                     <div class="card__image-container"><img src="src/img/thumbnails/water_drone_card.webp" alt="A sail-powered ocean drone" class="card__image" loading="lazy"></div>
                     <div class="card__content"><h4 class="card__title">Autonomous Ocean Drone</h4><p>STM32 firmware and system bring-up for TAFLab’s sail-powered prototypes.</p></div>
                     <div class="card__actions"><a href="src/pages/project3-detail.html" class="button">View ocean drone</a></div>
                 </article>
-                <article class="card">
+                <article class="card" id="calsol" tabindex="-1">
                     <div class="card__image-container"><img src="src/img/thumbnails/calsol_card.webp" alt="CalSol solar race car" class="card__image" loading="lazy"></div>
                     <div class="card__content"><h4 class="card__title">CalSol Solar Racing</h4><p>Real-time telemetry and radio networking for UC Berkeley’s solar racing team.</p></div>
                     <div class="card__actions"><a href="src/pages/project1-detail.html" class="button">View CalSol work</a></div>
                 </article>
-                <article class="card">
+                <article class="card" id="esp32-rhythm-game" tabindex="-1">
                     <div class="card__image-container"><img src="src/img/thumbnails/3dprints_glove.webp" alt="3D-printed components for a wearable controller" class="card__image" loading="lazy"></div>
                     <div class="card__content"><h4 class="card__title">ESP32 Rhythm Game</h4><p>A real-time rhythm game built in C with FreeRTOS.</p></div>
                     <div class="card__actions"><a href="src/pages/project4-detail.html" class="button">View ESP32 project</a></div>
                 </article>
-                <article class="card">
+                <article class="card" id="applied-machine-learning" tabindex="-1">
                     <div class="card__image-container"><img src="src/img/AI_icon.avif" alt="" class="card__image" loading="lazy"></div>
                     <div class="card__content"><h4 class="card__title">Applied Machine Learning</h4><p>Course projects in classification, regression, and reinforcement learning.</p></div>
                     <div class="card__actions"><a href="src/pages/project2-detail.html" class="button">View ML projects</a></div>
@@ -83,6 +83,15 @@
             <a href="src/documents/Arnav-Yadavilli-Resume.pdf" class="button">Open résumé (PDF)</a>
         </section>
     </main>
-    <footer class="site-footer full-bleed"><p>&copy; Arnav Yadavilli</p></footer>
+    <footer class="site-footer full-bleed">
+        <p>&copy; Arnav Yadavilli</p>
+        <nav class="footer-contact" aria-label="Contact and profiles">
+            <ul>
+                <li><a href="mailto:yarnav@umich.edu">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/arnav-yadavilli-535306277">LinkedIn</a></li>
+                <li><a href="https://github.com/pranceraz">GitHub</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>

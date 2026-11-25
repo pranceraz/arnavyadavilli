@@ -313,10 +313,28 @@ a:hover, a:focus {
   margin-bottom: 0;
 }
 .site-footer a {
-  color: var(--color-accent); /* Example: accent links in dark footer */
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 .site-footer a:hover, .site-footer a:focus {
   color: var(--white);
+}
+
+.footer-contact ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 var(--space-sm);
+  list-style: none;
+  margin-top: var(--space-xs);
+  padding: 0;
+}
+
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 
@@ -546,6 +564,62 @@ a:hover, a:focus {
   padding-inline: 0.6rem;
 }
 
+.nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.portfolio-home .card[id] {
+  scroll-margin-top: var(--space-sm);
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding-block: var(--space-sm);
+  }
+
+  .site-header > p {
+    margin-bottom: var(--space-xs);
+  }
+
+  .site-header .h1,
+  .project-detail-page .site-header h1 {
+    font-size: var(--text-xl);
+  }
+
+  .site-header .navbar {
+    padding-block: var(--space-xs) 0;
+  }
+
+  .site-header .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 0.45rem;
+  }
+
+  .site-header .nav-contact {
+    display: none;
+  }
+
+  .nav-link--projects {
+    background: var(--color-primary);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .portfolio-home {
+    row-gap: var(--space-sm);
+  }
+
+  .portfolio-home .featured-project .card__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .portfolio-home .featured-project .card__actions {
+    padding-top: var(--space-xs);
+  }
+}
+
 .portfolio-container .main-content-area {
   width: 100%;
 }
@@ -648,6 +722,16 @@ a:hover, a:focus {
 .text-link {
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+.back-to-work {
+  margin-bottom: 0;
+}
+
+.back-to-work a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .chart-key,
