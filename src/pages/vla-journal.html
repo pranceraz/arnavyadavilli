@@ -45,8 +45,8 @@
             <p class="eyebrow">Research in progress · Robot learning</p>
             <h1>Can a robot follow a written instruction?</h1>
             <p>I'm testing how a robot can use camera images and a written instruction to decide what to do next. I'm starting with SmolVLA (a vision-language-action model), LeRobot (the software used to run it), and LIBERO (a set of simulated robot tasks).</p>
-            <p><strong>Next milestone</strong><br>Get one short SmolVLA test running on LIBERO. The first attempt stopped while LeRobot was starting up.</p>
-            <p class="small">Last updated <time datetime="2026-11-24">November 24, 2026</time></p>
+            <p><strong>Next milestone</strong><br>Measure how often SmolVLA succeeds across several LIBERO tasks. The first short test is now working.</p>
+            <p class="small">Last updated <time datetime="2026-11-25">November 25, 2026</time></p>
         </section>
         <nav class="journal-nav" aria-label="On this page">
             <ul>
@@ -59,6 +59,13 @@
         <section id="journal">
             <h2>Engineering journal</h2>
             <div class="timeline">
+                <article class="entry">
+                    <time class="stamp" datetime="2026-11-25">Nov 25, 2026</time>
+                    <h3>First successful robot attempt</h3>
+                    <p>I got SmolVLA running on LIBERO-Spatial and watched the saved video of its first attempt. The robot completed task 0 successfully. Getting here meant sorting out GPU rendering and matching the simulator’s camera names to the model’s inputs.</p>
+                    <p>I also looked at action chunks: the model predicts several future robot actions at once, but it can execute fewer of them before looking at the scene again. This raises an interesting question about how quickly the robot can respond when something changes.</p>
+                    <p>Next, I want to run more episodes across different tasks to establish a baseline before fine-tuning the model.</p>
+                </article>
                 <article class="entry">
                     <time class="stamp" datetime="2026-11-24">Nov 24, 2026</time>
                     <h3>Choosing how to test the robot</h3>
@@ -75,16 +82,16 @@
             <h2>Progress tracker</h2>
             <div class="j-panel">
                 <p class="eyebrow">First round of experiments</p>
-                <h3>1 of 6 steps complete</h3>
-                <div class="meter" role="progressbar" aria-label="Completed milestones" aria-valuemin="0" aria-valuemax="6" aria-valuenow="1">
-                    <span style="width:16.6667%"></span>
+                <h3>3 of 6 steps complete</h3>
+                <div class="meter" role="progressbar" aria-label="Completed milestones" aria-valuemin="0" aria-valuemax="6" aria-valuenow="3">
+                    <span style="width:50%"></span>
                 </div>
                 <p class="small">This tracks project steps, not how well the robot performs.</p>
                 <ol class="phase-list">
                     <li><span class="state done">Complete</span> Choose a model and test environment: SmolVLA and LIBERO</li>
-                    <li><span class="state active">In progress</span> Set up LeRobot and run it on a computing cluster</li>
-                    <li><span class="state blocked">Blocked</span> Get one short test run (smoke test) working</li>
-                    <li><span class="state">Planned</span> Watch recorded robot attempts (rollouts) and see what goes wrong</li>
+                    <li><span class="state done">Complete</span> Set up LeRobot and run it on a computing cluster</li>
+                    <li><span class="state done">Complete</span> Get one short test run (smoke test) working</li>
+                    <li><span class="state active">In progress</span> Watch recorded robot attempts (rollouts) and see what goes wrong</li>
                     <li><span class="state">Planned</span> Measure how often the robot succeeds across several tasks</li>
                     <li><span class="state">Planned</span> Compare models or test how well they handle unfamiliar situations</li>
                 </ol>
@@ -94,9 +101,13 @@
             <h2>What's been tricky</h2>
             <div class="j-grid">
                 <article class="j-panel">
-                    <span class="state blocked">Open</span><h3>Getting the first test to run</h3>
-                    <p>My first attempt to run the evaluation on the computing cluster hit a Python error while LeRobot was starting up. I haven't pinned down the cause yet.</p>
-                    <p><strong>Next:</strong> Read the full error log and try again with the simplest possible setup.</p>
+                    <span class="state done">Resolved for smoke test</span><h3>Matching the camera inputs</h3>
+                    <p>LeRobot could start the simulator, but the model expected camera inputs named camera1 and camera2 while LIBERO supplied image and image2. I used LeRobot’s rename map to match the names without changing the model.</p>
+                    <p><strong>Outcome:</strong> The first evaluation completed successfully.</p>
+                </article>
+                <article class="j-panel">
+                    <span class="state done">Worked around</span><h3>Rendering on a cluster GPU</h3>
+                    <p>CUDA worked on an A100 MIG GPU (a slice of a larger GPU), but the simulator’s EGL offscreen renderer had trouble with its device identifier. I switched the evaluation to a graphics-capable A40 GPU to get the simulated camera images working.</p>
                 </article>
                 <article class="j-panel">
                     <span class="state active">Investigating</span><h3>Understanding what the model sees and does</h3>
@@ -105,15 +116,15 @@
                 </article>
                 <article class="j-panel">
                     <span class="state active">Investigating</span><h3>Seeing what the robot actually did</h3>
-                    <p>SLURM captures the computing job's logs, while LeRobot can save evaluation outputs separately. I'm figuring out where to find the results and videos.</p>
-                    <p><strong>Next:</strong> Check which files are saved once a test runs successfully.</p>
+                    <p>SLURM captures the computing job’s logs, while LeRobot saves evaluation outputs separately. I found and watched the MP4 from the first test.</p>
+                    <p><strong>Next:</strong> Save and compare videos from more attempts to understand why the robot succeeds or fails.</p>
                 </article>
             </div>
         </section>
         <section id="results">
             <h2>Results</h2>
             <div class="j-panel">
-                <p>No results to report yet. Once the tests work, I'll share how often the robot succeeds, videos of its attempts, and the model checkpoint, tasks, random seeds and settings needed to repeat the experiment.</p>
+                <p>My first smoke test used the pretrained <code>lerobot/smolvla_libero</code> checkpoint on LIBERO-Spatial task 0. The robot succeeded in 1 out of 1 attempts (100%), with a reported reward of 1.0. I watched the saved rollout video. One attempt is enough to check that the setup works, but not enough to judge the model’s reliability. Next I’ll record the settings, seeds and results for a larger set of trials.</p>
                 <p class="small">Resources: <a href="https://github.com/huggingface/lerobot">LeRobot</a> · <a href="https://huggingface.co/lerobot/smolvla_libero">SmolVLA checkpoint</a> · <a href="https://github.com/Lifelong-Robot-Learning/LIBERO">LIBERO</a></p>
             </div>
         </section>
